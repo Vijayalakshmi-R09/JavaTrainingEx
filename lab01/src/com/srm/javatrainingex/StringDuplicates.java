@@ -1,21 +1,24 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class StringDuplicates {
+	static Logger log=Logger.getLogger( StringDuplicates.class.getName());
+
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the string: ");
+		var sc=new Scanner(System.in);
+        log.info("Enter the string: ");
         String str=sc.next();
         char[] s=str.toCharArray();
-        int temp=1;
-        for(int i=0;i<s.length;i++) 
+        var temp=1;
+        for(var i=0;i<s.length;i++) 
         {
         	for(int j=i+1;j<s.length;j++)
         	{
         		if(s[i]==s[j]) {
-        			System.out.println(s[i]);  
+        			log.info(s[i]+"");  
         			temp++;
         			break;
         		}
@@ -23,7 +26,7 @@ public class StringDuplicates {
         }
     	if(temp==1) 
 		{
-			System.out.println("No Duplicates..");
+    		log.info("No Duplicates..");
         }
     }
 }

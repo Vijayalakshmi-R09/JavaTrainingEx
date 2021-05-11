@@ -2,33 +2,35 @@ package com.srm.javatrainingex;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class RemDuplicateArray {
+	static Logger log=Logger.getLogger( RemDuplicateArray.class.getName());
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter size of array: ");
-		int n=sc.nextInt();
+		var sc=new Scanner(System.in);
+		log.info("Enter size of array: ");
+		var n=sc.nextInt();
 		int[] arr= new int[n];
-		System.out.println("Enter array elements: ");
-		for(int i=0;i<n;i++) 
+		log.info("Enter array elements: ");
+		for(var i=0;i<n;i++) 
 		{
 			arr[i]=sc.nextInt();
 		}
 		Arrays.sort(arr);
 		int l=arr.length;  
 		l=removeDuplicate(arr,l);
-		System.out.println("\nArray after removing duplications ");
-		for (int i=0; i<l; i++)  
+		log.info("\nArray after removing duplications ");
+		for (var i=0; i<l; i++)  
 		{
-	           System.out.print(arr[i]+" ");  
+			log.info(arr[i]+" ");  
 		}
 }
-	public static int removeDuplicate(int arr[],int l)
+	public static int removeDuplicate(int[] arr,int l)
 	{
-        int t[] =new int[l];
-        int j=0;
-        for (int i = 0; i < l-1; i++) 
+        int[] t =new int[l];
+        var j=0;
+        for (var i = 0; i < l-1; i++) 
         {
            if (arr[i] != arr[i+1])
            {
@@ -36,7 +38,7 @@ public class RemDuplicateArray {
            }
         }
         t[j++] = arr[l-1];     
-        for (int i=0; i<j; i++)
+        for (var i=0; i<j; i++)
         {  
             arr[i] = t[i];  
         }   

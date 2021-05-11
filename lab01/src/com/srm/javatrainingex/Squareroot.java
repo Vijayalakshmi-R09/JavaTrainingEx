@@ -1,14 +1,16 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Squareroot {
+	static Logger log=Logger.getLogger( Squareroot.class.getName());
 
 	public static void main(String[] args) {
-		System.out.print("Enter a number: ");  
-		Scanner sc = new Scanner(System.in);  
-		int num = sc.nextInt();  
-		System.out.println("The square root of "+num+ " : "+squareRoot(num));  
+		log.info("Enter a number: ");  
+		var sc = new Scanner(System.in);  
+		var num = sc.nextInt();  
+		log.info("The square root of "+num+ " : "+squareRoot(num));  
 		}  
 	public static double squareRoot(int n)   
 	{  

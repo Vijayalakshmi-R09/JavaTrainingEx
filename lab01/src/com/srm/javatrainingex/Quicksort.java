@@ -1,14 +1,17 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Quicksort {
-	
+	static Logger log=Logger.getLogger(Quicksort.class.getName());
+
 	static void sort(int[] arr) {
 		quickSort(arr,0,arr.length-1);
 	}
-	static void quickSort(int arr[], int low, int high) {
-		int i = low, j = high;
+	static void quickSort(int[] arr, int low, int high) {
+		int i = low;
+		int j = high;
         int temp;
         int pivot = arr[(low + high) / 2];
         while (i <= j) 
@@ -33,19 +36,20 @@ public class Quicksort {
     }
 	
 	public static void main(String[] args) {
-        Scanner sc = new Scanner( System.in );       
-        int n, i;
-        System.out.println("Enter number of array elements");
+        var sc = new Scanner( System.in );       
+        int n;
+        int i;
+        log.info("Enter size of array");
         n = sc.nextInt();
-        int arr[] = new int[ n ];
-        System.out.println("\nEnter "+ n +" integer array elements");
+        int[] arr = new int[ n ];
+        log.info("\nEnter elements");
         for (i = 0; i < n; i++)
             arr[i] = sc.nextInt();
             sort(arr);
-        System.out.println("\nElements after Quick sorting ");        
+            log.info("\nElements after Quick sorting ");        
         for (i = 0; i < n; i++)
-            System.out.print(arr[i]+" ");            
-        System.out.println();            
+        	log.info(arr[i]+" ");            
+        log.info("");            
     }    
 
 		

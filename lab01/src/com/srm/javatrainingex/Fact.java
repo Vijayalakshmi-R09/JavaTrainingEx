@@ -1,17 +1,18 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Fact {
-
+	static Logger log=Logger.getLogger(Fact.class.getName());
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the number: ");
-		int num=sc.nextInt();
+		var sc=new Scanner(System.in);
+		log.info("Enter the number: ");
+		var num=sc.nextInt();
 		int factr=factRecursive(num);
 		int facti=factIterative(num);
-		System.out.println("The fcatorial of "+num+" using Recursion: "+factr);
-		System.out.println("The fcatorial of "+num+" using Iteration: "+facti);
+		log.info("The fcatorial of "+num+" using Recursion: "+factr);
+		log.info("The fcatorial of "+num+" using Iteration: "+facti);
 	}
 	static int factRecursive(int n)
 	{
@@ -23,8 +24,8 @@ public class Fact {
 	}
 	static int factIterative(int n)
 	{
-		int f=1;
-		for(int i=1;i<=n;i++)
+		var f=1;
+		for(var i=1;i<=n;i++)
 		{
 			f=f*i;
 		}

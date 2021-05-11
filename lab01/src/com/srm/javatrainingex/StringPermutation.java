@@ -1,21 +1,23 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class StringPermutation {
+	static Logger log=Logger.getLogger(StringPermutation.class.getName());
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the string: ");
+		var sc=new Scanner(System.in);
+        log.info("Enter the string: ");
         String str=sc.next();
-        System.out.println("The Possible Permutations are: ");
+        log.info("The Possible Permutations are: ");
         permute(str, 0, str.length() - 1);
 	}
 	static void permute(String s,int l,int r)
 	{
 		if (l == r)
 		{
-			System.out.println(s);
+			log.info(s);
 		}
 		else 
 		{

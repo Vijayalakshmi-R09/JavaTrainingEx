@@ -1,13 +1,17 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Insertionsort {
+	static Logger log=Logger.getLogger(Insertionsort.class.getName());
 
 	static void insertSort(int[] arr, int n)
 	{
-		int temp, j,k;
-		System.out.println("Array Elements After Insertion Sort");
+		int temp;
+		int j;
+		int k;
+		log.info("Array Elements After Insertion Sort");
 		for(k=1; k<n; k++)   
 	    {  
 	        temp = arr[k];  
@@ -19,19 +23,19 @@ public class Insertionsort {
 	        }  
 	        arr[j+1] = temp;  
 	    }  
-	    for(int i=0;i<n;i++)  
+	    for(var i=0;i<n;i++)  
 	    {  
-	        System.out.println(arr[i]);  
+	    	log.info(arr[i]+"");  
 	    }  
 	}
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Insertion Sort");
-		System.out.println("Enter size of array: ");
-		int n=sc.nextInt();
+		var sc=new Scanner(System.in);
+		log.info("Insertion Sort");
+		log.info("Enter size of array: ");
+		var n=sc.nextInt();
 		int[] arr= new int[n];
-		System.out.println("Enter array elements: ");
-		for(int i=0;i<n;i++) {
+		log.info("Enter array elements: ");
+		for(var i=0;i<n;i++) {
 			arr[i]=sc.nextInt();
 		}  
        insertSort(arr,n);  

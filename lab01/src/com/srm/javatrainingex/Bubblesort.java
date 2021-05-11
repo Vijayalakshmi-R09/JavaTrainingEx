@@ -1,16 +1,18 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Bubblesort {
+	static Logger log=Logger.getLogger(Bubblesort.class.getName());
 
 	 static void bubbleSort(int[] arr) 
 	 {
         int len= arr.length;  
-        int temp = 0;  
-         for(int i=0; i < len; i++)
+        var temp = 0;  
+         for(var i=0; i < len; i++)
          {  
-             for(int j=1; j < (len-i); j++)
+             for(var j=1; j < (len-i); j++)
              {  
                   if(arr[j-1] > arr[j])
               {    
@@ -24,25 +26,25 @@ public class Bubblesort {
 
 		public static void main(String[] args) 
 		{
-			Scanner sc=new Scanner(System.in);
-			System.out.println("Bubble Sort");
-			System.out.println("Enter size: ");
-			int n=sc.nextInt();
+			var sc=new Scanner(System.in);
+			log.info("Bubble Sort");
+			log.info("Enter size: ");
+			var n=sc.nextInt();
 			int[] arr= new int[n];
-			System.out.println("Enter array elements: ");
-			for(int i=0;i<n;i++) {
+			log.info("Enter array elements: ");
+			for(var i=0;i<n;i++) {
 				arr[i]=sc.nextInt();
 			}
-			System.out.println("Array Elements are:");  
-	        for(int i=0; i < arr.length; i++){  
-	                System.out.print(arr[i] + " ");  
+			log.info("Array Elements are:");  
+	        for(var i=0; i < arr.length; i++){  
+	        	log.info(arr[i] + " ");  
 	        }  
-	        System.out.println();  
+	        log.info("");  
 	        bubbleSort(arr);  
 	        
-	        System.out.println("Array After Bubble Sort");  
-	        for(int i=0; i < arr.length; i++){  
-	                System.out.print(arr[i] + " ");  
+	        log.info("Array After Bubble Sort");  
+	        for(var i=0; i < arr.length; i++){  
+	        	log.info(arr[i] + " ");  
 	        }  
 
 

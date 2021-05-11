@@ -1,18 +1,19 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Whitspaceremov {
+	static Logger log=Logger.getLogger(Whitspaceremov.class.getName());
 
 	public static void main(String[] args) 
 	{
-
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the string : ");
+        var sc=new Scanner(System.in);
+        log.info("Enter the string : ");
         String str=sc.nextLine();
-        System.out.println("Original string:  "+str);
+        log.info("Original string:  "+str);
         String str2;
 		str2 = str.replaceAll("\\s", ""); 
-		System.out.println("After whitespace removal:  "+str2);
+		log.info("After whitespace removal:  "+str2);
 	}
 }

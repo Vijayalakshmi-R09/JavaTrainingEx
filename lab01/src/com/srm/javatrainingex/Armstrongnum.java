@@ -1,18 +1,22 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Armstrongnum {
+	static Logger log=Logger.getLogger( Armstrongnum.class.getName());
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the Number: ");
-		int num=sc.nextInt();
+		var sc=new Scanner(System.in);
+		log.info("Enter the Number: ");
+		var num=sc.nextInt();
 		checkArmstrong(num);		
 	}
 	static void checkArmstrong(int n)
 	{
-		int r=0,a,sum;
+		var r=0;
+		int a; 
+		int sum;
 		sum=n;
 		while(n>0)
 		{
@@ -22,11 +26,11 @@ public class Armstrongnum {
 		}
 		if(sum==r)
 		{
-			System.out.println(sum+" --> Armstrong number.");
+			log.info(sum+" --> Armstrong number.");
 		}
 		else
 		{
-			System.out.println(sum+" --> Not Armstrong number.");
+			log.info(sum+" --> Not Armstrong number.");
 		}
 	}
 

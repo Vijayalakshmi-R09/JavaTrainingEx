@@ -1,17 +1,19 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class NonRepeatchar {
+	static Logger log=Logger.getLogger(NonRepeatchar.class.getName());
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the string: ");
+		var sc=new Scanner(System.in);
+        log.info("Enter the string: ");
         String str=sc.next();
-	    for (int i = 0; i < str.length(); i++) 
+	    for (var i = 0; i < str.length(); i++) 
 	    {
-	    	boolean unique = true;
-	    	for (int j = 0; j < str.length(); j++) 
+	    	var unique = true;
+	    	for (var j = 0; j < str.length(); j++) 
 	    	{
 	    		if (i != j && str.charAt(i) == str.charAt(j))
 	    		{
@@ -21,7 +23,7 @@ public class NonRepeatchar {
 	    	}
 	    	if (unique)
 	    	{
-			    System.out.println("The first non repeated character in String is: " + str.charAt(i));
+	    		log.info("The first non repeated character in String is: " + str.charAt(i));
 			    break;
 	    	}
 	    }

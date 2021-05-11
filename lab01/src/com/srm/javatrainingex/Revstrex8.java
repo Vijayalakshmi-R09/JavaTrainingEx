@@ -1,20 +1,24 @@
 package com.srm.javatrainingex;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Revstrex8 {
+	static Logger log=Logger.getLogger( Revstrex8.class.getName());
+
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the string: ");
+		var sc=new Scanner(System.in);
+        log.info("Enter the string: ");
         String str=sc.next();
-        System.out.println("reversal of the given string: "+reverse(str));		
+        log.info("reversal of the given string: "+reverse(str));		
 	}
-	static String reverse(String s)
+	static StringBuilder reverse(String s)
 	{
-		String rev="";
+		var rev=new StringBuilder();
 		for(int i=s.length();i>0;i--)
 		{
-			rev=rev+(s.charAt(i-1));
+			var ch=s.charAt(i);
+			rev=rev.append(ch);
 		}
 		return rev;
 	}
