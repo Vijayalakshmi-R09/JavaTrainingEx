@@ -1,0 +1,5 @@
+101-Turkey-fast-2000
+102-Kovai-express-2500
+103-zurich-express-200
+104-NewYork-superfast-5000
+105-Vayanad-regular-100
